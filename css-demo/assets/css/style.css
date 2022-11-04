@@ -1,68 +1,346 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8" />
-<title>Positioning Lab</title>
-<style type="text/css">
-* {
-	margin: 0px;
-	padding: 0px;
+html {
+	box-sizing: border-box;
 }
-body 
-{
-	background-color: #ECECEC;
-	font-weight: bold;
-	font-family: Tahoma, Geneva, sans-serif;
-	color: #FFF;
-	text-align: center;
-	line-height: 24px;
+*,
+*:before,
+*:after {
+	box-sizing: inherit;
 }
-#wrapper 
-{
-	background-color: #FFF;
-	border-top-width: 1px;
-	border-right-width: 1px;
-	border-bottom-width: 1px;
-	border-left-width: 1px;
-	border-top-style: solid;
-	border-right-style: solid;
-	border-bottom-style: solid;
-	border-left-style: solid;
-	width: 800px;
-	margin-right: auto;
-	margin-left: auto;
+  
+  
+.container {
+	width: 75vw;
+	margin: 40px auto;
+	max-width: 960px;
 }
-#red {
-	background-color: #900;
-}
-#green {
-	background-color: #090;
-}
-#blue {
-	background-color: #00F;
-}
-#purple {
-	background-color: #63C;
-}
-#footer {
-	background-color: #666;
-}
-h1 {
-	color: #000;
-	font-weight: normal;
-	padding: 50px;
-}
-</style>
-</head>
 
-<body>
-<h1>Exercise 1</h1>
-<div id="wrapper">
-  <div id="red">Red</div>
-  <div id="green">Green</div>
-  <div id="blue">Blue</div>
-  <div id="purple">Purple</div>
-  <div id="footer">Footer</div>
-</div>
-</body>
-</html>
+  
+.img-right {
+	float: right;
+	margin: 20px 0 20px 20px;
+	border: 1px solid #c0c0c0;
+	padding: 5px;
+	border-radius: 6px;
+}
+  
+.img-left {
+	float: left;
+	margin: 20px 20px 20px 0;
+	border: 1px solid #c0c0c0;
+	padding: 5px;
+	border-radius: 6px;
+}
+  
+.img-center {
+	display: block;
+	margin: 20px auto;
+	border: 1px solid #c0c0c0;
+	padding: 5px;
+	border-radius: 6px;
+}
+  
+  /*  ---------------Responsive Images-----------------  */
+  
+img {
+	max-width: 100%;
+}
+  
+  /*  --------------- Global Styles -----------------  */
+  
+body {
+	font-family: "Roboto", sans-serif;
+	margin: 0;
+	line-height:1.6rem;
+}
+  
+header.primary {
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='49' viewBox='0 0 28 49'%3E%3Cg fill-rule='evenodd'%3E%3Cg id='hexagons' fill='%23C0C0C0' fill-opacity='0.2' fill-rule='nonzero'%3E%3Cpath d='M13.99 9.25l13 7.5v15l-13 7.5L1 31.75v-15l12.99-7.5zM3 17.9v12.7l10.99 6.34 11-6.35V17.9l-11-6.34L3 17.9zM0 15l12.98-7.5V0h-2v6.35L0 12.69v2.3zm0 18.5L12.98 41v8h-2v-6.85L0 35.81v-2.3zM15 0v7.5L27.99 15H28v-2.31h-.01L17 6.35V0h-2zm0 49v-8l12.99-7.5H28v2.31h-.01L17 42.15V49h-2z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+	background-color: #3b638b;
+	text-align: center;
+	color: #ffffff;
+	padding: 40px;
+	/*long form*/
+	padding-top: 40px;
+	padding-right: 40px;
+	padding-bottom: 40px;
+	padding-left: 40px;
+	/* T,R,B,L */
+	padding: 40px 40px 40px 40px;
+	/* Two Value Top/Bottom / L/R */
+	padding: 20px 40px;
+	text-shadow: 1px 1px #000000;
+}
+  
+header.primary h1 {
+	font-size: 2.5rem;
+	margin: 20px 0 10px;
+}
+  header.primary h1 a {
+	color: #ffffff;
+	text-decoration: none;
+}
+  
+header.primary h2 {
+	font-size: 1.4rem;
+	/* Top | Left/Right | Bottom */
+	margin: 10px auto 30px;
+}
+  
+header.primary nav {
+	max-width: 960px;
+	margin: auto;
+}
+  
+header.primary ul {
+	padding: 0;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+}
+  
+header.primary li {
+	list-style-type: none;
+}
+  
+header.primary nav a {
+	color: #ffffff;
+	text-decoration: none;
+	background: rgba(0, 0, 0, 0.4);
+	padding: 8px 16px;
+	border-radius: 20px;
+	transition: 0.5s;
+	/* width | stroke type | color */
+	border: 1px solid rgba(0, 0, 0, 0.6);
+}
+  
+header.primary nav a:hover,
+header.primary nav a:active {
+	background: rgba(0, 0, 0, 0.8);
+}
+  
+#intro {
+	border-bottom: 1px solid #c0c0c0;
+	padding-bottom: 0.9rem;
+}
+  
+#intro h2 {
+	color: #3b638b;
+	border-bottom: 1px solid #c0c0c0;
+}
+  
+#content {
+	display: flex;
+	justify-content: space-between;
+	flex-direction: row;
+	border-bottom: 1px solid #c0c0c0;
+	padding-bottom: 2.9rem;
+}
+  
+#content article.post {
+	width: 30%;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+	padding: 10px;
+	border-radius: 4px;
+	font-size: 0.8rem;
+	transition: 0.5s;
+}
+  
+#content article.post:hover {
+	box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+  
+article.post figure {
+	margin: 0;
+}
+  
+time.post-date,
+figcaption,
+.post-meta {
+	text-transform: uppercase;
+	color: #c0c0c0;
+}
+  
+article.post figure img {
+	border: 1px solid #c0c0c0;
+	padding: 2px;
+	border-radius: 4px;
+	margin: 5px auto;
+}
+  
+article.post a {
+	color: #3b638b;
+}
+  
+article.post a:hover {
+	text-decoration: none;
+}
+  
+#demo h2 {
+}
+#demo p {
+}
+#demo a {
+	color: #3b638b;
+}
+#demo a:hover {
+	text-decoration: none;
+}
+  
+#demo h3 {
+	border-left: 7.5px solid #3b638b;
+	padding: 10px;
+}
+  
+table {
+	width: 100%;
+	border: 1px solid #c0c0c0;
+	border-collapse: collapse;
+}
+table caption {
+	margin-bottom: 10px;
+	font-weight: bold;
+}
+th {
+	background-color: #172635;
+	color: #ffffff;
+	padding: 10px;
+}
+tr:nth-child(even) {
+	background-color:rgba(0,0,0,.1);
+}
+  
+tr:hover{
+	background-color:rgba(0,0,0,.2);
+}
+  
+td {
+	border: 1px solid #c0c0c0;
+	padding:5px;
+	text-align:right;
+	width:33%;
+}
+  
+td:first-of-type{
+	text-align:left;
+}
+  
+#demo ol{
+	list-style-type:lower-roman;
+	list-style-position:outside;
+}
+  
+#demo ul li{
+  list-style-type:disc;
+}
+  
+#demo ul ul li{
+  list-style-type:square;
+}
+  
+#demo ul ul ul li{
+  list-style-type:circle;
+}
+  
+#demo dl{
+	
+}
+  
+#demo dt{
+	font-weight:bold;
+}
+  
+#demo dd{
+	margin:0;
+}
+  
+dd + dt{
+	margin-top:20px;
+}
+  
+#demo blockquote{
+	background-color:rgba(0,0,0,.1);
+	padding:30px 40px;
+	border:5px double #c0c0c0;
+	border-radius:15px;
+	font-size:1.2rem;
+}
+  
+#demo cite{
+	display:block;
+	font-weight:bold;
+	font-size:.8rem;
+	text-align:right;
+	margin-top:5px;
+}
+  
+  /* Attribute Selector Example*/
+aside[role="complementary"] {
+	background-color: #172635;
+	color: #ffffff;
+	padding: 1.9rem;
+}
+  
+aside .container {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+}
+  
+aside article.widget {
+	width: 43%;
+}
+  
+article.widget a:last-of-type {
+	color: #fff;
+	display: block;
+	text-align: right;
+	margin-top: 0.8rem;
+}
+  
+article.widget footer {
+	display: none;
+}
+  
+#colophon {
+	background-color: #3b638b;
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='49' viewBox='0 0 28 49'%3E%3Cg fill-rule='evenodd'%3E%3Cg id='hexagons' fill='%23C0C0C0' fill-opacity='0.2' fill-rule='nonzero'%3E%3Cpath d='M13.99 9.25l13 7.5v15l-13 7.5L1 31.75v-15l12.99-7.5zM3 17.9v12.7l10.99 6.34 11-6.35V17.9l-11-6.34L3 17.9zM0 15l12.98-7.5V0h-2v6.35L0 12.69v2.3zm0 18.5L12.98 41v8h-2v-6.85L0 35.81v-2.3zM15 0v7.5L27.99 15H28v-2.31h-.01L17 6.35V0h-2zm0 49v-8l12.99-7.5H28v2.31h-.01L17 42.15V49h-2z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+  
+#colophon h6 {
+	padding: 20px;
+	margin: 0;
+	text-align: center;
+	color: #ffffff;
+	font-size: 0.9rem;
+}
+  
+@media screen and (max-width: 600px) {
+	header.primary ul {
+	  flex-direction: column;
+	  width: 60vw;
+	  margin: 0 auto;
+	}
+	header.primary nav a {
+	  display: block;
+	}
+	header.primary nav li {
+	  margin-bottom: 10px;
+	}
+	
+	#content {
+	flex-direction: column;
+	}
+	#content article.post{
+	width:100%;
+	margin-bottom:20px;
+	}
+	
+	aside .container {
+	flex-direction:column;
+    }
+	aside .container article.widget{
+	  width:100%;
+	}
+	
+}
+  
