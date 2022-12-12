@@ -7,18 +7,36 @@ html {
   box-sizing: inherit;
 }
 
-.container {
-  width: 80vw;
-  margin: 40px auto;
-  max-width: 900px;
-}
-
 body {
   font-family: "Helvetica", sans-serif;
   margin: 0;
   line-height:1.6rem;
   background-color: #1E1E1E;
   color:#ffffff;
+}
+
+header {
+  display: block;
+}
+
+h1 {
+  display: block;
+  font-size: 2em;
+  margin-block-start: 0.67em;
+  margin-block-end: 0.67em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+}
+
+h2 {
+  display: block;
+  font-size: 1.5em;
+  margin-block-start: 0.83em;
+  margin-block-end: 0.83em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
 }
 
 
@@ -43,8 +61,14 @@ header.primary::before {
   opacity: 0.3;
 }
 
+header.primary h1 {
+  font-size: 3.2rem;
+  margin: 20px 0;
+  position: relative;
+}
+
 header.primary h2 {
-  font-family: "Merriweather", cursive;
+  font-family: "Merriweather", non-cursive;
   font-size: 2em;
   margin: 20px auto 40px;
   position: relative;
@@ -57,8 +81,65 @@ margin-right: 30px;
 position: relative;
 }
 
+nav {
+  display: block;
+}
+
+ul {
+  display: block;
+  list-style-type: disc;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  padding-inline-start: 40px;
+}
+
+li {
+  display: list-item;
+  text-align: -webkit-match-parent;
+}
+
+a:-webkit-any-link {
+  color: -webkit-link;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+header.primary nav ul {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 0;
+  max-width: 900px;
+  margin: 20px auto;
+}
+
+header.primary nav li {
+  list-style-type: none;
+  padding: 0;
+  width: 20%;
+}
+
+header.primary nav a:link, header.primary nav a:visited {
+  color: white;
+  text-decoration: none;
+  background-color: rgba(142, 166, 184, 0.4);
+  padding: 8px 20px;
+  border-radius: 150px;
+  transition: 0.6s;
+}
+
 #content {
   padding: 4em 0;
+}
+
+th {
+  display: table-cell;
+  vertical-align: inherit;
+  font-weight: bold;
+  text-align: -internal-center;
 }
 
 #content h2 {
@@ -69,6 +150,11 @@ position: relative;
   font-size: 2em;
 }
 
+caption {
+  display: table-caption;
+  text-align: -webkit-center;
+}
+
 p {
   display: block;
   margin-block-start: 1em;
@@ -77,31 +163,59 @@ p {
   margin-inline-end: 0px;
 }
 
-#articles {
-  background: #1a1e21;
+section#content h3 {
+  border-bottom: 1px solid #c0c0c0;
 }
 
-#articles .container {
+section#content caption {
+  font-weight: bold;
+  font-size: 1.5rem;
+  margin: 10px;
+  font-family: "Merriweather", non-cursive;
+  font-size: 2em;
+  color: #ffffff;
+}
+
+section#content table {
+  width: 100%;
+  border: 1px solid #c0c0c0;
+  border-collapse: collapse;
+}
+
+section#content th {
+  background: #181C1F;
+  color: #ffffff;
+  text-align: left;
+  padding: 10px;
+}
+
+section#articles {
+  background: #1a1e21;
+  align-items: stretch;
+}
+
+section#articles.container {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   flex-wrap: wrap;
-  border-bottom: 1px solid #c0c0c0;
   padding: 0 0 4em 0;
 }
 
-#articles h2 {
+section#articles h2 {
   color: #fff;
   text-shadow: 2px 2px #000;
 }
 
-#articles h2, #content h2 {
+section#articles h2, #content h2 {
   flex: 0 0 100%;
   color: #ffffff;
   text-align: center;
-  font-family: "Merriweather", cursive;
+  font-family: "Merriweather", non-cursive;
   font-size: 2em;
 }
+
+
 
 #articles article.post {
   width: 30%;
@@ -152,14 +266,14 @@ img {
   padding: 0 20px;
 }
 
-ul {
+article {
   display: block;
-  list-style-type: disc;
-  margin-block-start: 1em;
-  margin-block-end: 1em;
-  margin-inline-start: 0px;
-  margin-inline-end: 0px;
-  padding-inline-start: 40px;
+}
+
+.container {
+  width: 80vw;
+  margin: 40px auto;
+  max-width: 900px;
 }
 
 aside[role="complementary"] {
@@ -178,6 +292,10 @@ aside article.widget {
   width: 40%;
 }
 
+aside article footer {
+  display: none;
+}
+
 .widget.overview table {
   font-size: 0.7em;
   border-collapse: collapse;
@@ -185,6 +303,8 @@ aside article.widget {
 
 table {
     display: table;
+    border-collapse: separate;
+    box-sizing: border-box;
     text-indent: initial;
     border-spacing: 2px;
     border-color: grey;
@@ -202,6 +322,30 @@ tr {
   border-color: inherit;
 }
 
+section#content tr:nth-child(even) {
+  background: #000000;
+}
+
+td {
+  display: table-cell;
+  vertical-align: inherit;
+}
+
+section#content td {
+  border: 1px solid #c0c0c0;
+  padding: 5px;
+}
+
+.widget.overview table td:nth-child(even) {
+  text-align: right;
+}
+
+.widget.overview table td {
+  border-bottom: 1px solid #fff;
+  padding: 10px;
+}
+
+
 footer#colophon {
   background-color: #121212;
 }
@@ -217,6 +361,7 @@ footer#colophon {
 
 #colophon h6 a:link, #colophon h6 a:visited {
   color: #fff;
+
 }
 
 
